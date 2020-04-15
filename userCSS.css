@@ -1,0 +1,586 @@
+/* Minimalist User Profile v1 by alxq #9085
+
+THINGS YOU'D NEED:
++ a background image url, preferably at least 2000 x 2000 pixels
+- make sure your image url ends in .jpeg , .jpg , or .png and that it doesnt' have ? in its url
+- right click on your image, select "copy image url" or "copy image address" to get the url
++ two colors to complement your background (in RGB form)
+- color one, the MAIN color, will be denoted as ###
+- color two, the COMPLIMENTARY color, will be denoted as ***
+- color two hover, the DARKER version of color two, will be denoted as %%%
+
+OPTIONAL THINGS:
+- if your main color is LIGHT, as in very light pink or yellow:
+	- please change all lines that have "color: #fff;" into "color: #000;" or some other
+dark color for readability on your profile
+
+- if your main color is DARK, as in very dark blue or red:
+	- you can change all lines that have "color: #fff;" into some other light color
+or you can leave it alone.
+
+- logos (big on top, small on bottom), the icons and villagers on the bottom are all
+optional. if youd like to keep the default images, you can simply take off the code
+that asks for the img urls (that ISNT under .content, you want that to stay because
+thats the code for your background).
+i.e. "background: url('PETS IMAGE URL HERE');"
+
+- the village shield animation is also optional. to take it out, you can simply 
+delete the code under VILLAGE SHIELD ANIMATION
+
+- you may take out hovers if you like, or adjust them accordingly. make sure that the
+code youre modifying corresponds to the right one! (i.e. .villagers-list:hover takes
+care of the villager list hover effect).
+
+- if you have a hover (i.e. the hover on your villagers list) and its too short/too
+long of a wait time, you can just change the max-height information on the hovers.
+make sure that you're changing the max-height under the code that has :hover in it
+(i.e. .villagers-list:hover {} )!
+
+YOU MAY:
+- edit to hell and back
+- use snippets to make your own frankenstein with appropriate credit
+- credit minor edits done by you as long as you credit me for the base code
+- share with friends
+
+YOU MAY NOT:
+- claim it (fully) as your own
+- use the base code/snippets of it as an entry in a css contest
+- SELL EDITS OF THIS CODE
+
+RGB form should look something like this (xxx,xxx,xxx)
+there will be parts where the form is rgba(xxx,xxx,xxx,@@@)
+in this case, just replace the first three xxx with their
+respective rgb code and leave @@@ alone (unless you know what
+you're doing)
+here's a site to find rgb values of a color:
+http://www.javascripter.net/faq/hextorgb.htm
+
+if you are unsure about something, please message #9085 on Furvilla 
+thanks to msjanny #7302 for helping clean up the code! */
+
+/* QUOTES */
+.quote {
+    border: none;
+    margin: 0px;
+    border-radius: 20px;
+    background: rgba(***, ***, ***, 0.7);
+}
+
+/* ANNOYING BORDER NEAR NUMBERS */
+.counter {
+   border: none !important;
+}
+
+/* UNIVERSAL TRANSITIONS */
+a .fa {
+    transition: none;
+}
+* {
+    transition: 1s;
+}
+ 
+/* SEMIOPAQUE BACKGROUND */
+.report a,
+.widget-content,
+.user-comments .user-comment,
+.content .textarea + .btn,
+.content .textarea,
+.gallery-header .btn-link,
+.panel,
+.villagers-list,
+.user-data,
+.alert.success,
+.alert.alert,
+.alert,
+.notifications .btn,
+.recent-posts .forum-posts li:nth-child(odd),
+.user-panel.clearfix {
+    background: rgba(###,###,###,0.8);
+}
+ 
+/* OPAQUE BACKGROUND */
+.report a:hover,
+.content .textarea + .btn:hover,
+.gallery-header .btn-link:hover,
+.notifications .btn,
+.search-form .input,
+.widget-header h3,
+.dropdown-menu,
+#logo+:nth-child(2) {
+    background: rgb(###,###,###);
+}
+
+.content .active span,
+.table tr:hover td,
+.dropdown-menu .multi-column-dropdown li .fa p,
+.dropdown-menu .multi-column-dropdown li a {
+    background: rgb(###,###,###) !important;
+}
+ 
+/* WHITE TEXT */
+div.bottom,
+.widget-content,
+.user-info h4,
+.content .pagination > .disabled > span,
+.content .pagination > .disabled > span:hover,
+.content .pagination > .disabled > span:focus,
+.content .pagination > .disabled > a,
+.content .pagination > .disabled > a:hover,
+.content .pagination > .disabled > a:focus,
+.content .textarea,
+.content,
+.search-form .input,
+.dropdown-menu .multi-column-dropdown li a,
+.content h1.clearfix, //added
+.user-comments .user-comment .footer,
+.widget .forum-posts p {
+    color: #fff;
+}
+
+.content .pagination a,
+.gallery-header .btn-link,
+.alert.success,
+.alert.alert,
+.alert,
+.dropdown-menu .multi-column-dropdown li a {
+    color: #fff !important;
+}
+ 
+/* WEBPAGE BACKGROUND */
+/* do NOT delete this if you want a custom bg image */
+.content:after {
+    background: url('BACKGROUND URL HERE');
+    height: 100%;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+}
+ 
+/* UNIVERSAL LINK */
+a,
+.user-comments .user-comment .footer a,
+.widget .forum-posts p a {
+    color: rgb(***,***,***);
+}
+a:hover, a:focus, a:active,
+.user-comments .user-comment .footer a:hover,
+.widget .forum-posts p a:hover {
+    color: rgb(%%%,%%%,%%%);
+    text-decoration: none;
+}
+ 
+/* LOGO IMAGE (BIG) */
+/* you can remove this section if you don't */
+/* want to change the big logo on top */
+#logo a {
+    background: url('LOGO IMAGE HERE') no-repeat;
+}
+ 
+/* SEARCH FORM */
+.search-form .input {
+    border: none;
+}
+ 
+/* DROPDOWN MENU */
+.dropdown-menu .multi-column-dropdown li a:hover {
+   transition: 0.5s all !important;
+   background: #fff !important;
+   color: rgb(###, ###, ###) !important;
+}
+
+.dropdown-menu .multi-column-dropdown li a {
+   transition: 0.5s all !important;
+   color: #fff !important;
+} 
+
+/* USER PANEL NAV */
+.user-panel.clearfix {
+    border-radius: 0 0 10px 10px;
+}
+
+header .user-panel,
+header .user-panel a {
+color: rgb(***,***,***) !important;
+}
+
+header .user-panel a:hover {
+color: rgb(%%%,%%%,%%%) !important;
+}
+
+/* USER DATA HEADER TEXT, PROFILE DESCRIPTION HEADER TEXT */
+/* (VIEWING ...'S PROFILE) */
+.content h1, .user-header {
+    display: none;
+}
+ 
+/* WEBPAGE GENERAL CSS */
+.content {
+    background: none;
+    margin-bottom: 100px;
+    padding: 20px;
+}
+ 
+/* NOTIFICATIONS TABLE */
+.table tr:nth-child(even) td,
+.table tr:nth-child(odd) td {
+    background: none;
+    border: none;
+    padding: 10px 13px;
+}
+ 
+/* NOTIFICATIONS BUTTONS*/
+.notifications .btn {
+    text-transform: uppercase;
+    font-size: 11px;
+}
+ 
+/* NOTIFICATIONS TEXT (NON LINKS) */
+tbody b {
+    font-weight: normal;
+}
+ 
+/* TOP BANNER AD */
+.left-column .text-center.margin-10px {
+    display: none;
+}
+ 
+/* HEADERS */
+.content h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    color:  #fff;
+    text-align: center;
+}
+ 
+/* VILLAGE SHIELD ANIMATION (it bobs up and down slowly) */
+/* you may remove this section if you like */
+.village-shield {
+    animation: bob 1.0s ease-out infinite;
+    position: relative;
+    padding: 20px;
+}
+
+@keyframes bob {
+    0% {
+        top: 5px;
+    }
+    50% {
+        top: 8px;
+    }
+    100% {
+        top: 5px;
+    }
+}
+ 
+/* USER DATA */
+.user-data {
+    border-radius: 20px;
+}
+ 
+/* QUICK LINKS */
+.user-links {
+    margin: 20px;
+    padding: 20px;
+}
+ 
+/* USER INFO, TROPHIES */
+.col-xs-7, .col-xs-5 {
+    padding: 20px;
+}
+
+.col-xs-7 {
+    position: relative;
+    left: 35%;
+}
+
+.trophies {
+    position: relative;
+    top: 30px;
+}
+ 
+/* TROPHIES TEXT */
+.trophies-header {
+	text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+ 
+/* TROPHIES IMAGES */
+.trophies .row img {
+    max-width: 50px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* DOORSTEP (DMM EVENT EXCLUSIVE) */
+.col-md-4 {
+    width: 30%;
+    text-align: center;
+}
+
+.col-md-8 {
+    width: 70%;
+}
+
+.col-md-8 .btn {
+   margin: 5px;
+   transition: 1s all;
+   background-image: none;
+   text-shadow: none;
+   background: rgba(***,***,***,0.7);
+   font-weight: normal !important;
+}
+
+.col-md-8 .btn:hover {
+   margin: 5px;
+   transition: 1s all;
+   background-image: none;
+   text-shadow: none;
+   background: rgba(***,***,***,1);
+}
+ 
+/* PROFILE DESCRIPTION BODY TEXT */
+.user-data .user-desc {
+    padding: 30px;
+    margin: 0;
+}
+ 
+/* VILLAGERS */
+.content .villagers-list {
+    padding: 20px;
+    border-radius: 20px;
+    max-height: 190px;
+    transition: 3s;
+    overflow: hidden;
+}
+.villagers-list:hover {
+/* adjust this accordingly
+more villagers, bigger pixel height
+this default height is meant for 6 rows of villagers
+with two rows of info (name + career) */
+    max-height: 1300px;
+}
+ 
+/* GALLERY */
+.gallery {
+    max-height: 160px;
+    overflow: hidden;
+}
+
+.panel {
+    border-radius: 20px;
+    border: none;
+}
+ 
+/* GALLERY ITEM TEXT */
+.name {
+    display: none;
+}
+ 
+/* GALLERY BUTTON */
+.gallery-header .btn-link {
+    font-weight: normal;
+}
+ 
+/* COMMENT FORM */
+.content .textarea {
+    border: none;
+}
+ 
+/* POST BUTTON */
+.content .textarea + .btn {
+    text-transform: uppercase;
+}
+ 
+/* USER COMMENTS */
+.user-comments {
+    height: 300px;
+    overflow: auto;
+}
+ 
+/* USER COMMENTS BODY */
+.user-comments .user-comment {
+    width: 550px;
+    border: none;
+}
+.user-comments .user-comment .footer {
+    width: 515px;
+   color: #fff !important;
+}
+.user-comments .user-comment:after,
+.user-comments .user-comment:before {
+    border-right-color: rgba(###,###,###, 0.5);
+}
+ 
+/* USER COMMENTS AVATARS */
+.user-avatar-wrapper img {
+    margin: 10px;
+    border-radius: 47px;
+    width: 60px;
+}
+ 
+/* PAGINATION */
+.content .pagination a {
+    background: rgba(###,###,###,0.5) !important;
+    border: 0 !important;
+}
+.content .pagination a:hover {
+    background: rgba(###,###,###,0.7) !important;
+}
+.content .active span {
+    z-index: 3;
+    border: 0 !important;
+}
+.content .pagination > .disabled > span,
+.content .pagination > .disabled > span:hover,
+.content .pagination > .disabled > span:focus,
+.content .pagination > .disabled > a,
+.content .pagination > .disabled > a:hover,
+.content .pagination > .disabled > a:focus {
+    background-color: rgba(###,###,###,0.2) !important;
+    border: 0 !important;
+}
+ 
+/* "HI, USERNAME" */
+.user-info h4 {
+    text-transform: uppercase;
+/* you may choose a different font family for this */
+    font: 13px 'Helvetica';
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+ 
+/* USER PANEL BODY TEXT */
+.right-column .widget .user-info p {
+    text-transform: uppercase;
+/* you may choose a different font family for this */
+    font: 11px 'Helvetica';
+}
+ 
+/* WIDGET BODY */
+.widget-content {
+    border-radius: 0 0 20px 20px;
+}
+ 
+/* WIDGET HEADER (blue border) */
+.content .widget-header {
+    border-bottom: none;
+}
+ 
+/* WIDGET HEADER */
+.widget-header h3 {
+    border-radius: 20px 20px 0 0;
+    margin: 0;
+    padding: 10px 0 5px;
+    text-align: center;
+    text-shadow: none;
+    font-weight: normal;
+    color: rgb(***,***,***);
+    padding: 10px 0px;
+    text-transform: uppercase;
+/* you may choose a different font family for this */
+    font: 12px 'Helvetica';
+    border-bottom: 1px dotted #fff;
+}
+ 
+/* VIEW MORE BUTTONS */
+.right-column .btn-link {
+    color: rgb(***,***,***) !important;
+}
+.right-column .btn-link:hover {
+    color: rgb(%%%,%%%,%%%) !important;
+}
+ 
+/* RECENT ACTIVITY */
+.recent-posts .widget-content {
+    padding-bottom: 5px;
+}
+
+.recent-posts .forum-posts li:nth-child(even) {
+    background: none;
+}
+
+.widget .forum-posts p {
+    color: #fff !important;
+}
+
+.widget .forum-posts li {
+   border-bottom: 1px solid #fff;
+}
+ 
+/* USER PANEL ICON */
+.right-column .text-center img {
+    border-radius: 20px;
+}
+ 
+/* LOGO IMAGE (SMALL, BOTTOM) */
+/* you may comment/delete this section if you like */
+.logo-small {
+    width: 110px;
+    overflow: hidden;
+    padding-left: 110px;
+    background: url('SMALL LOGO IMAGE URL HERE') center no-repeat !important;
+}
+ 
+/* VILLAGER IMAGE (BOTTOM) */
+/* you may comment/delete this section if you like */
+.pets {
+    width: 269px;
+    overflow: hidden;
+    padding-left: 269px;
+    background: url('PETS IMAGE URL HERE');
+}
+ 
+/* SOCIAL MEDIA ACCOUNTS LINKS (BOTTOM) */
+/* you may comment/delete this section if you like*/
+.social a {
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+}
+
+.social img {
+    display: none;
+}
+
+.social a:first-child {
+    background: url('FACEBOOK ICON IMAGE URL HERE');
+}
+
+.social a:nth-child(2) {
+    background: url('TWITTER ICON IMAGE URL HERE');
+}
+
+.social a:last-child {
+    background: url('TUMBLR ICON IMAGE URL HERE');
+}
+
+/* BOTTOM LINKS FOOTER */
+footer .bottom {
+    background-color: rgba(###,###,###,0.8);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+p.copyright.align-center {
+    background: url(https://i.imgur.com/GvXx9k5.png) no-repeat;
+}
+ 
+/* FLOATING REPORT USER PROFILE */
+.report a {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    color: rgb(169, 68, 66);
+    border-radius: 5px;
+    padding: 5px;
+}
+.report a:hover {
+    color: #ed1c24;
+}
+
+/* TOOLTIPSTER (dotted border under timestamp) */
+span.tooltipster {
+   border-bottom: 1px dashed rgb(***,***,***);
+}
